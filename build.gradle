@@ -14,25 +14,14 @@ configurations {
     }
 }
 
-repositories {
-    mavenCentral()
-}
 
 ext {
     set('springCloudVersion', "2021.0.6")
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    implementation 'org.springframework.cloud:spring-cloud-config-server'
-    implementation 'org.springframework.cloud:spring-cloud-starter'
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
-    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
-    implementation 'org.springframework.cloud:spring-cloud-starter-zookeeper-config'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.springframework.boot:spring-boot-starter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.kafka:spring-kafka-test'
 }
 
 dependencyManagement {
@@ -43,4 +32,26 @@ dependencyManagement {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+allprojects{
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects{
+
+    group = 'com.personal'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '11'
+
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok:1.18.12'
+        annotationProcessor 'org.projectlombok:lombok'
+    }
 }
