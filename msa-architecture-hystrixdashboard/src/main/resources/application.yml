@@ -1,0 +1,18 @@
+server:
+  port: 7070
+
+spring:
+  application:
+    name: msa-architecture-hystrixdashboard
+
+# Config Server
+  cloud:
+    config:
+      url: http://localhost:8888
+      name : msa-architecture-config-server
+
+# Eureka Client
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9091/eureka/
