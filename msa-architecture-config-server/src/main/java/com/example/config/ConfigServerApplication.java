@@ -1,14 +1,13 @@
-package com.personal.status;
+package com.example.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@EnableEurekaClient
 @SpringBootApplication
-public class MsaServiceCoffeeStatusApplication {
+public class ConfigServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MsaServiceCoffeeStatusApplication.class, args);
+        SpringApplication.run(ConfigServerApplication.class, args);
     }
 
 }
