@@ -7,4 +7,4 @@ spring:
   cloud:
     server:
       git:
-        url: https://github.com/MingyeomKim/microservice-coffeeshop.git
+        url: https://github.com/MinGyum-Kim/microservice-coffeeshop.git

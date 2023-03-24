@@ -10,14 +10,7 @@ import org.springframework.context.annotation.Bean;
 @EnableEurekaClient
 @SpringBootApplication
 public class ZuulServerApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(ZuulServerApplication.class, args);
     }
-
-    @Bean
-    public SimpleFilter simpleFilter(){
-        return new SimpleFilter();
-    }
-
 }
