@@ -4,7 +4,69 @@ server:
 spring:
   application:
     name: msa-architecture-config-server
+  profiles:
+    active: native, default # native file repository
   cloud:
-    server:
-      git:
-        url: https://github.com/MinGyum-Kim/microservice-coffeeshop.git
+    config:
+      server:
+        git:
+          skip-ssl-validation: true
+          timeout: 4
+          searchPaths: msa-architecture-config-server/src/main/resources/profile.yml
+          uri: git@github.com:Mingyum-Kim/microservice-coffeeshop.git
+          ignoreLocalSshSettings: true # 속성 기반 SSH 구성을 사용
+          privateKey: |
+                      -----BEGIN RSA PRIVATE KEY-----
+                      Proc-Type: 4,ENCRYPTED
+                      DEK-Info: AES-128-CBC,ECF3C855E0B84ED326CAE59E35F1F321
+          
+                      38a5EvE6Y6V5AkrE1YmqaD7fd7J2TeZFWOjFt/lNOvDo9dsN3bXvoQ92iu3qXVpn
+                      qlszthpFRRlYXkJ27VkiR9/2rfk1lvKfSiXe2mxH1jT1EdcW//m5kNDaJAwQQSSF
+                      EfYc/+XBqM1crjIlDz2/QPN2gVQvNLiXtGBkI2MXWrfLpaqsPw2SyEKmOTzsMTza
+                      5+sYSjMTCzKUOI22/vv0IDetKzLbXi8CkdRQ5AvUgxuxp45kX4rHssp9IuQi4dQZ
+                      jnh9H0vGmtCosm60o2sfO80hd8PSC6cEZTLYZtmmPStlHsnAijHSj6xJakULVMcI
+                      2739sMA6fcdmcZJkQ/obQkFrHJ+WlNZEjkRg1tnaQq+dF2wet1RBCpVCmQrPh5D4
+                      lW5Jl1/vcph5+hpEM8WW4u14QNTXMVN6ItXWvxAreCxPIQstTosvgDAEUCVI5FcP
+                      OEVMEllxgHc0UHtk/Wtr5lcpH0SXxQMj53HPZJoARGvnL1KLUT9/l5v6JxS6vHmX
+                      C+RpZzksSaqnLu8scVaZzWYKS8CtAanSCm6bU8JustWoQYLgYDzVaP1FH0HUUUHV
+                      AuBuBIunAqApeWBoCGhAEaohpzMBmG2Y3K0hBo4dUBAtd2bVva68r5lS2WIdAxRP
+                      OFco5zU9bV5xXUr/6phiP9J49zkVQI8A20mEktw9aMnO7FFhu3h7GfKgQtXfibah
+                      isVQlDyhVixGSyrAh7ZnaPbQ8C/8EI4/fsCui/yYqrmcO73ltso5SDOJSs25NlbI
+                      a8yzfclqh15SXNEUwhmzlFB3gAXsBMp2J3WQamvbobBoydZ/xTUCdpCGUOFZ8Bxc
+                      59p3f0rAT/A5RQly81GqsjmtDPzI0sCz5SUYO8pQkSW61uRmhESOEQbiUwSsTqvL
+                      MAZc1HbSjp5hAexJu/yjDujVJDXI8Qk7CODUxxB4KxBA36aX3veSEN50btwt3cHJ
+                      XuUIfLARmFPucQbLyNzJDi9QuQ51fUaWbfYRxomijI91YNhW5wxLHZDaO5j/U+0R
+                      p7RCJIOaLoiA1Sb3avtbXjKMDr7FEgiEZXiwHennAxTCEvO/z+zRsQ2vHvzZP/lW
+                      D2R3FF6AQ2PpSdE4Yxoe3fuwRpT7Jo6CzScXq4FhoEqyuQfKM3Cg9TZU3Skn2+5C
+                      n/SJOCaJDaVjU+RVtwdbZc7fHb8mt0qn8bhE6oLsWB0w2l7aIK82VXwNHegLMKQm
+                      mfAQb5ioc2r9nUM957F+55hPWrvzn6WZMXrV0rw0pNQDRX4ZvB1BU/8cGD7psVbz
+                      mO4/6hoSCWlFhHo6Q/YTv8L78Dp6pM7gmeYszusozL3Wf6sAZKhKi3Bhm4xTD3Ig
+                      OTQLBlPsepvWZme/cYFlCghhuXRVfnXxB3gICHO3XFnaCkRUPtxqFIigJU/5X0kH
+                      Pu1xSA5x+xV0Niq5QST9vgTXrv7wJ7EwvkhLoIi2CcsvCngFKErCqgZE1zm5IpFk
+                      quGstcOCpWsIgvDqPlJMZR5EtlYrIt9IEVTr1jtg7545npxzVwJnP4UKM/cffm8x
+                      jodfELUSq8fkszd11mAoppl25aIR6ayON7bTmv9ISy490evYoMBmA0f3k38gtMla
+                      rw+9zA1Ubbjoz8HatiL7+6MgkfkVsuuaIfs1nKMr2be7qmOVEpyCOJM590ZCUloa
+                      6l/1KaL3pvbYHIfw1Md43z4QOxvJkZ2050qubpIorzy0JVcBfnzIeS4ru1doRfUY
+                      VO+2wiX1udHGEOuX6GZQmkF+cQK3DppH2gMh5LCAZ39pQTCi+RgkfYiOZItPfgIm
+                      YwqO5WV5tKat2qnFkkn21TCHAKA+/50HeLsESNC+tN/i/ME8sGtd24vwieGPqEZ1
+                      COXCeK8G2to18Kh5AiUKHftHo4zXl4wysy2CIHS4eFgyBzxk3El9nbP8R8nYaJJ8
+                      hnOjODTSIGP6KZlCoeaGIeSJIueT3sJE5/bQv5OkZ6lHG88ldlBNHmAGtoUDAkNA
+                      ghV7BuQYb68lGFIuHgUM5vx6332tmBtUVjxshx3UH8EwYqNhUBF628zPUFXLxIol
+                      Ozhjd+V033+dzFP8i3PwL9HKGYs5CbNzbWhP0SVWaNV9iIA7lOHBI8Mjh6d+7fPt
+                      6FbafeIWDSSqJi1ADXER5l1DagMW3JVTZ8CanKdw0vNhJ5Nmjv6ifUE7ZPB5wsFX
+                      lVQ7tSM/BzJG/qcEc1ejD7eBhuun+eCallctaQmYn/xMQEUFm/jWCy7I5nCB+26F
+                      spbriAATE+0QYdq2yE1ItOFjIEsYHBXdUp+oi8xaO2XsDFwJ+9q5PVwoH2Zl7Q+m
+                      SiQ7ZNnTNwq1Y65KBz5O+XR7ilhwIzNqa1/0cKS2hzyJe11VcZX/htyXHVcDUY4p
+                      dGswqe4F+7rm4c7DVfjH9a9BGvbxq86CKlwD/HKN3Uu+GW+Rtp4/2dBFOi5d3Wkv
+                      L1YB95a3YH6mwrAyBnIltcPzjg1ogj8JDNs86pGViDlgaYB3Fd2yePM0tIjn2EZP
+                      loVMNGBnOuojD4XQrxZTy7gKHlfNTSKlEZqu3BduyxvFYWF+2er+FEtLk5XRKlBg
+                      Ey1ZDxoeyFs15fBxyhRbu+Rpv7VwTkAwjKkwZ4U32+Tviy2Jkemqqt3MNUl39pDk
+                      jQaIFIl9GNzJ6WmEhthHuhBPlLy1cpGcEUtMpOmnH1ZjmgTuKRCmjz2Q2o07mj01
+                      vW2v4p3gJ7V8ZsWFJ2ScMB4ODHw2HCWTdJR/jbwqQFhCaAxcHbtsYb89Eap4yBo0
+                      DYFvFtqaV8IIoPZfYYoQ0iJLpQ8hz3Pv2xfaVRWFlC1Uk30Eeqt2HlhRCYeRIqb6
+                      iiOEJShE/oTUOUZKplh1LU/RfnZ6I34/cuuP1s1NBBSQ+X7yPku1eetpVHc/UNz0
+                      BGozz8UKQ0jH1HH+gn3HqiMt/kzx5wzrDAj9SBPMk0MQLVdri2S0DDbuW5qPCBYI
+                      JXQo26Gz97g+9AAZMd5x5xirL1wTU2gaXjswtdJZwuuluYhlE9EFKLyGGcToTDVH
+                      dQ+bhWCqhJ3p1tpkCpYhzGCQfpWtkl0D5/INRFSPp63TcWr1UxM9OmhizizLXd1J
+                      rF5ZTZIDXFTNRmkxgaJkfJAFKwLt2LPHVg/HJx3U2jkVh47NUfJOnyvvQPOict1g
+                      -----END RSA PRIVATE KEY-----
