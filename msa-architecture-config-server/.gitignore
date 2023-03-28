@@ -36,3 +36,4 @@ out/
 ### VS Code ###
 .vscode/
 msa-architecture-config-server/src/main/resources/application.yml
+src/main/resources/application.yml
