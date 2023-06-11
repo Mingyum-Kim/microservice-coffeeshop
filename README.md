@@ -1,7 +1,7 @@
 # microservice-coffeeshop
 "자바 기반의 마이크로서비스 이해와 아키텍쳐 구축하기" 커피 전문점 서비스 프로젝트 실습 
 
-[이론 정리 글](https://mingyum119.tistory.com/228)
+이 책에서 언급된 마이크로서비스 관련한 이론은 다음 블로그에 정리하였습니다.  [이론 정리 글](https://mingyum119.tistory.com/228)
 
 ### 서비스 설명
 
